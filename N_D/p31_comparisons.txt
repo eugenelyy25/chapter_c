@@ -1,0 +1,16 @@
+< Less Than
+> Greater Than
+<= Less or Equal To
+>+ Greater or Equal To
+== Equal To
+!= Not Equal To
+! Not
+&& Logical And
+|| Logical Or
+
+Example
+(a < b) returns 0 or 1 (false or true)
+(i == 5) is Test
+(!a) is either true(1) or false(0)
+(a&&b) is true, if a and b are true
+

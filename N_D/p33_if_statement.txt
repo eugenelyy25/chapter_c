@@ -1,0 +1,15 @@
+One Statement:
+if (expr)
+	statement
+
+More than one statement:
+if  (expr){
+	statement -1
+	.
+	.
+	.
+	statement-n
+	}
+
+// Put { at if, else, while - regardless
+

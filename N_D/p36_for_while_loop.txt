@@ -1,0 +1,18 @@
+Controlling execution flow (for & while)
+
+for() loop:
+for( init; test; loop){ //semi-colon seperate 3part
+    statement-1 //any or all part can be empty
+    .
+    .
+    statement-n //if empty it marks as true
+} //for(;;){ a+=1;} is infinite loop
+
+while()loop:
+while(test){
+    statement-1
+    .
+    .
+    statement-n
+    loop;
+}

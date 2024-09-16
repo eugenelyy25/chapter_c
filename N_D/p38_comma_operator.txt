@@ -1,0 +1,11 @@
+a = 0, b = 1; 
+//lowest precedence in operators of c (left-to-right)
+
+for(sum=0, i=1, i<=n; ++i){
+    sum += i;
+    }
+//complex for() loop
+
+for(sum=0, i=1, i<=n; ++i, sum += i);
+//difficult-to-read
+//an empty body loop (need ;)

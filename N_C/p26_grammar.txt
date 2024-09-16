@@ -1,0 +1,14 @@
+Grammar
+Keywords, Identifiers, Constants, String Constants,
+Operators & Punctuators
+
+Valid Identifiers(example): k, _id, iamanidentifier2,
+ so_am_i
+Invalid Identifiers(example): not#me, 101_south, 
+-plus
+
+CONSTANTS
+17 (decimal), 017 (octal), 0x17 (hexadecimal)
+
+STRING CONSTANTS
+"I am a string"

@@ -1,0 +1,37 @@
+Remember:
+Standard Input Ouput: #include <stdio.h>
+printf(), scanf()
+Standard Linnrary: #include <stdlib.h>
+rand()
+
+Example:
+Area of a Rectangle
+Declaration: int side1, side2, area;
+Assignment: side2 = 8;
+--
+Inside printf() contains 2 Arguments %i
+Keyword:
+char : character
+--
+
+Three floating types: float, double, long double
+
+--
+Inside printf()
+fixed-width: printf("F:%7f\n", f)
+fixed precision: printf("F:%2f\n", f);
+--
+Inside scanf()
+scanf(("%f", &x) == 1)
+--
+While Loops
+while (scanscanf("%f", &x) == 1){
+cnt = cnt + 1;
+sum=sum+x;}
+
+while (test is true){
+	statement 1;
+	...
+	statement n;}
+
+

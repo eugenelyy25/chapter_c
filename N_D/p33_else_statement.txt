@@ -1,0 +1,22 @@
+Adding else statement:
+if (expr) {
+ statement-1
+ .
+ .
+ .
+ statement-n
+ }
+ else{
+ statement-a
+ .
+ .
+ .
+ statement-e
+ }
+
+Dr. Neil Example:
+x y z
+5 5 5
+
+min
+5 (then pass)

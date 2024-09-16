@@ -1,0 +1,12 @@
+switch (val){ //val must be integer
+    case 1 :
+        a++;
+        break; //execution to jump out of loop
+    case 2 :
+    case 3:
+        b++;
+        break;
+        default :
+        c++
+}
+//no break means it'll fall through next line

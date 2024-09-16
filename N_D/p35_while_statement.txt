@@ -1,0 +1,13 @@
+One While Statement:
+while (expr)
+	statement
+
+More While Statement:
+while (expr){
+	swhile(expr){
+ statement-1
+ .
+ .
+ .
+ statement-n
+ }

@@ -1,0 +1,8 @@
+if(x >= 0.0 && sqrt(x) < 10.0){
+..... /* Do Something */
+}
+
+--
+sqrt() cannot be negative
+sqrt() statement never reached if first test false
+&& (logical AND)if expression false,everything false
