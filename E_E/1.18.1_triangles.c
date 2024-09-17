@@ -21,6 +21,17 @@ int main(void)
         //If true, Invalid triangle
         printf("Invalid triangle!\n");
     }
+    else if ((a == b || b == c || a == c))
+    {
+        if (a == b && b == c){
+        //If true, Equilateral triangle
+        printf("It is an equilateral triangle!\n");
+        }
+        else{
+        //If false, Isoceles triangle  
+        printf("It is an isoceles triangle!\n");
+        }
+    }
     else if ((a + b > c && a + c > b && b + c > a)) //all possible triangles (triangle inequality theorem)
     {
         //If true, Valid triangle
