@@ -1,0 +1,20 @@
+Formats of %c and %i
+Example:
+char c='a'
+printf("%c\n", c); /*prints : a */
+printf("%i\n", c); /*prints : 97 */
+
+Hard-to-print character
+escape sequence -- Hex -- character
+\a                 07     Alert (Beep, Bell)
+\b                 08     Backspace
+\e                 1B     Escape character
+\f                 0C     Formfeed Page Break
+\n                 0A     Newline (Line Feed)
+\r                 0D     Carriage Return
+\t                 09     Horizontal Tab
+\v                 0B     Vertical Tab
+\\                 5C     Backslash
+\'                 27     Apostrophe
+\"                 22     Double quote
+\?                 3F     Question mark

@@ -1,0 +1,20 @@
+Useful ctype.h function
+
+Function/Macro      Return
+int tolower(int c)  c (lowercase)
+int toupper(int c)  C (Uppercase)
+int toascii(int c)  ASCII value of c
+
+Others:             true if return:
+int isalnum(int c)  Letter/Digit
+int isalpha(int c)  Letter
+int iscntrl(int c)  Control Character
+int isdigit(int c)  Digit
+int isgraph(int c)  Printable (not space)
+int islower(int c)  Lowercase
+int isprint(int c)  Printable
+int ispunct(int c)  Punctuation
+int isspace(int c)  White Space
+int isupper(int c)  Uppercase
+int isxdigit(int c) Hexadecimal
+int isascii(int c)  ASCII Code

@@ -1,0 +1,10 @@
+characters stored in machine as 1 byte
+
+Declaration:
+char c;
+
+c = 'A';
+or:
+char c1='A', c2='*', c3=';' ;
+
+Encoding type: ASCII
