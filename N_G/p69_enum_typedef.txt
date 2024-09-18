@@ -1,0 +1,17 @@
+enum day {sun,mon,tue,wed,thu,fri,sat};
+--
+type: enum day
+by default: sun=0, mon=1, tue=2, wed=3, thu=4, fri=5, sat=6
+example:
+enum day d1;
+...
+d1 = fri;
+--
+
+changing default numbering:
+enum fruit{apple=7,orange=3,lemon=0}
+
+==
+typedef int colour;
+now colour is same as type: "int"
+able to build lengthy user-defined types

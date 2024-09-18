@@ -1,0 +1,10 @@
+enum veg {beet, carrot, pea}
+typedef enum veg veg;
+veg v1, v2;
+v1 = carrot;
+
+combine 2 operations into 1 (not recomended)
+typedef enum veg veg;
+veg v1, v2;
+v1 = carrot;
+v1 = 10;
