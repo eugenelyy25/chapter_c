@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 
-#define PI 3.141592653
-
+void test(void);
 int circle(int x);
 
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
     int x;
     
     printf("Input a radian: ");
-    scanf("%f", &x);
+    scanf("%lf", &x);
     if (x >= 0 && x <= 2*PI){
         int circle(int x);
         printf("%d\n",x);
@@ -24,5 +24,10 @@ int main(void)
 
 int circle(int x)
 {
-    return sin(x)*sin(x) + cos(x)*cos(x);
+    // Calculate sin
+}
+
+void test(int x)
+{
+    assert ()
 }
