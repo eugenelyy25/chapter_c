@@ -19,7 +19,7 @@ int main(void)
    //Random numbers generated = possible x values * y values
    for (i = 0; i < (INTERVAL*INTERVAL); i++){
       
-      rand_x = double(rand()%1000;
+      rand_x = double(rand()%1000);
       rand_y = double(rand()%1000);
 
       d = x*x + y*y
@@ -32,6 +32,7 @@ int main(void)
 
      }
 
+     return 0;
    
 }
 /*
