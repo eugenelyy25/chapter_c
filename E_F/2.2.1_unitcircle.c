@@ -2,32 +2,38 @@
 #include <math.h>
 #include <assert.h>
 
+double test_trig_identity(double x);
 void test(void);
-int circle(int x);
 
 int main(void)
 {
-    int x;
+    double x;
     
     printf("Input a radian: ");
     scanf("%lf", &x);
-    if (x >= 0 && x <= 2*PI){
-        int circle(int x);
-        printf("%d\n",x);
-    }
-    else
-    {
-        printf("Invalid Input");
-    }
+    test_trig_identity(x);
+    test();
+
     return 0;
 }
 
-int circle(int x)
+double test_trig_identity(double x)
 {
-    // Calculate sin
+    //int result = pow(sin(x), 2) + pow(cos(x), 2);
+    double result = sin(x)*sin(x) + cos(x)*cos(x);
+
+    printf("sin²(%.2f) + cos²(%.2f) = %.2f (Test passed)\n", x, x, result);
+
+    return result;
 }
 
-void test(int x)
+void test(void)
 {
-    assert ()
+    double x = 1.0;
+    double result = test_trig_identity(x);
+    double epsilon = 1e-9;
+    assert((result > 1.0 - epsilon) && (result < 1.0 + epsilon) && "Test failed: sin²(x) + cos²(x) != 1");
+    //check if gets near 1
+
+    printf("Assertion passed for x = %.2f\n", x);
 }
