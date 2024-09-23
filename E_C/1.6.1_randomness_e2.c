@@ -10,7 +10,7 @@ int main(void)
     for (int i=0;i<500;i++){
     double value=rand()%(RAND_MAX);
     difference=plus_cnt-minus_cnt;
-    printf("itteration : %d values plus_cnt=%d,minus_cnt=%d,difference=%d, RAND_MAX=%f\n",i,plus_cnt,minus_cnt,difference,RAND_MAX);
+    printf("iteration : %d values plus_cnt=%d,minus_cnt=%d,difference=%d, RAND_MAX=%f\n",i,plus_cnt,minus_cnt,difference,RAND_MAX);
     if (value < median) {
             minus_cnt++;}
     }

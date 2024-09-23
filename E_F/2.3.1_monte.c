@@ -3,13 +3,15 @@
 #include <time.h>
 #include <assert.h>
 
-double monte_carlo_pi(int interval);
+double monte_carlo_pi(int interval, int rand_max);
+
 
 int main(void)
 {
     int interval = 100;
+    int rand_max = 100;
     //Run the Monte Carlo simulation and approximation of Pi
-    double pi = monte_carlo_pi(interval);
+    double pi = monte_carlo_pi(interval, rand_max);
 
     printf("\nFinal approximation of Pi after %d iterations: %f\n", interval, pi);
     assert(interval > 0); //Ensure that INTERVAL is positive
@@ -18,7 +20,7 @@ int main(void)
     return 0;
 }
 
-double monte_carlo_pi(int interval)
+double monte_carlo_pi(int interval, int rand_max)
 {
     int circle_points = 0;
     int square_points = 0;
@@ -28,10 +30,10 @@ double monte_carlo_pi(int interval)
 
     for (int j = 0; j < interval; j++) {
         //Generate random x and y coordinates between -1 and 1
-        x = (double)rand()/ RAND_MAX * 2 - 1;
-        y = (double)rand()/ RAND_MAX * 2 - 1;
+        x = (2.0 * (rand()%(rand_max + 1)) /rand_max) - 1;
+        y = (2.0 * (rand()%(rand_max + 1)) /rand_max) - 1; 
 
-        // Assert that x and y within expected range
+        // Assert that x and y are within the expected range
         assert(x >= -1.0 && x <= 1.0);
         assert(y >= -1.0 && y <= 1.0);
 
@@ -41,7 +43,7 @@ double monte_carlo_pi(int interval)
         // Assert that the distance is non-negative
         assert(d >= 0.0);
 
-        // Check if point is inside the unit circle
+        // Check if the point is inside the unit circle
         if (d <= 1.0) {
             circle_points++;
         }
