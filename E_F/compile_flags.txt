@@ -1,0 +1,1 @@
+clang -Wall -Wextra -Wvla -Wfloat-equal -std=c99 file.c -o file
