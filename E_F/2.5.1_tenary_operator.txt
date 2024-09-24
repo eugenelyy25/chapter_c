@@ -1,0 +1,11 @@
+condition ? expression_if_true : expression_if_false;
+If condition true, executes & returns expression_if_true.
+If condition false, executes & returns expression_if_false.
+
+Example: value < 0 ? -value : value;
+#1  Input: -10.5
+    Returns: -(-10.5) 
+#2  Input: 7.3
+    Returns: 7.3
+#3  Input: 0
+    Returns: 0
