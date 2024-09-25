@@ -1,0 +1,13 @@
+#include <string.h>
+
+char *strcat(char dest[], const char src[]);
+int strcmp(const char s1[], const char s2[]);
+
+strcat() 
+appends copy of string src
+to end of string dst
+// including \0
+
+strcmp()
+compares 2 strings byte-by-byte (machine char set)
+function returns i > 0, i = 0, i < 0
