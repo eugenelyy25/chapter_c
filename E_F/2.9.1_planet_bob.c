@@ -12,9 +12,9 @@ int main(void)
     char consonants[] = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
     int count = 1;
 
-    //Consonant-Vowel-Consonant pattern
-    for (int i = 0; i < sizeof(consonants); i++) {
-        for (int j = 0; j < sizeof(vowels); j++) {
+    // Consonant-Vowel-Consonant pattern
+    for (int i = 0; i < (int)(sizeof(consonants) / sizeof(consonants[0])); i++) {
+        for (int j = 0; j < (int)(sizeof(vowels) / sizeof(vowels[0])); j++) {
             char first = consonants[i];
             char middle = vowels[j];
             char last = consonants[i];
@@ -24,9 +24,9 @@ int main(void)
             }
         }
     }
-    //Vowel-Consonant-Vowel pattern
-    for (int i = 0; i < sizeof(vowels); i++) {
-        for (int j = 0; j < sizeof(consonants); j++) {
+    // Vowel-Consonant-Vowel pattern
+    for (int i = 0; i < (int)(sizeof(vowels) / sizeof(vowels[0])); i++) {
+        for (int j = 0; j < (int)(sizeof(consonants) / sizeof(consonants[0])); j++) {
             char first = vowels[i];
             char middle = consonants[j];
             char last = vowels[i];
@@ -36,7 +36,7 @@ int main(void)
             }
         }
     }
-    test (); //assertion test
+    test(); // assertion test
     return 0;
 }
 
@@ -56,7 +56,7 @@ int letter_value(char c)
 
 void test(void)
 {
-    //Test is_prime function
+    // Test is_prime function
     assert(is_prime(2) == true);
     assert(is_prime(3) == true);
     assert(is_prime(4) == false);
@@ -64,12 +64,12 @@ void test(void)
     assert(is_prime(1) == false);
     assert(is_prime(0) == false);
 
-    //Test letter_value function
+    // Test letter_value function
     assert(letter_value('a') == 1);
     assert(letter_value('b') == 2);
     assert(letter_value('z') == 26);
 
-    //Test valid name generation
+    // Test valid name generation
     char test_name1[] = "aca";
     char test_name2[] = "aka";
     char test_name3[] = "bab";
