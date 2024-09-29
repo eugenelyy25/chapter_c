@@ -21,7 +21,7 @@ void rot(char str[]){
 
 // any other functions here
 
-void your_test(void){
+void your_tests(void){
     char test1[] = "a";
     rot(test1);
     assert(strcmp(test1, "n") == 0);
@@ -49,4 +49,10 @@ void your_test(void){
     char test7[] = "!";
     rot(test7);
     assert(strcmp(test7, "!") == 0);
+
+    char test8[] = "i want to go to kansas and live with aunt em and uncle henry well then what can be done";
+    rot(test8);
+    assert(strcmp(test8, "v jnag gb tb gb xnafnf naq yvir jvgu nhag rz naq hapyr urael jryy gura jung pna or qbar") == 0);
+    rot(test8)
+    assert(strcmp(test8, "i want to go to kansas and live with aunt em and uncle henry well then what can be done") == 0);
 }
