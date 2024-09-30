@@ -22,6 +22,7 @@ void rot(char str[]){
 // any other functions here
 
 void your_tests(void){
+
     char test1[] = "a";
     rot(test1);
     assert(strcmp(test1, "n") == 0);

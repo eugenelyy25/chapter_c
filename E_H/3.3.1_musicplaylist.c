@@ -3,6 +3,8 @@
 #include <time.h>
 #include <assert.h>
 
+#define MAX_SIZE 100
+
 void swap(int array[], int i, int j); // Function to swap two elements
 void shuffle(int array[], int n); // Function to shuffle the array
 void test(void); // Function to verify the shuffle
@@ -14,7 +16,7 @@ int main(void) {
     printf("How many songs required? ");
     scanf("%d", &num_songs);
     
-    int songs[num_songs];
+    int songs[MAX_SIZE];
     for (int i = 0; i < num_songs; i++) {
         songs[i] = i + 1;
     }
@@ -44,7 +46,7 @@ void shuffle(int array[], int n) {
 }
 
 void verify_array(int array[], int n) {
-    int original[n];
+    int original[MAX_SIZE];
     for (int i = 0; i < n; i++) {
         original[i] = array[i]; //copy all elements from input[] to original[]
     }
