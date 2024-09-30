@@ -3,151 +3,68 @@
 #include <time.h>
 #include <assert.h>
 
-void swap(int array[], int i, int j);
-void shuffle(int array[], int n);
-void test(void);
+void swap(int array[], int i, int j); // Function to swap two elements
+void shuffle(int array[], int n); // Function to shuffle the array
+void test(void); // Function to verify the shuffle
+void verify_array(int array[], int n); // Helper function to verify an array
 
-int *songs;
-int num_songs;
-
-int main(void)
-{
-    // Step 1: Get user input
+int main(void) {
+    int num_songs;
+    
     printf("How many songs required? ");
     scanf("%d", &num_songs);
-
-    // Step 2: Generate list of songs
-    songs = (int *)malloc(num_songs * sizeof(int));
+    
+    int songs[num_songs];
     for (int i = 0; i < num_songs; i++) {
         songs[i] = i + 1;
     }
-
-    // Step 3: Shuffle the list
-    shuffle(songs, num_songs);
-
-    // Step 4: Output the shuffled list
-    printf("Output:\n");
-    for (int i = 0; i < num_songs; i++) {
-        printf("%d ", songs[i]);
-    }
-    printf("\n");
-
-    // Step 5: Run the test
+    
     test();
-
-    // Free the allocated memory
-    free(songs);
-
+    
+    shuffle(songs, num_songs);
+    
+    for (int i = 0; i < num_songs; i++) {
+        printf("%d \n", songs[i]);
+    }
     return 0;
 }
 
-// Function to swap two elements without using pointers
-void swap(int array[], int i, int j)
-{
+void swap(int array[], int i, int j) {
     int temp = array[i];
     array[i] = array[j];
     array[j] = temp;
 }
 
-// Function to shuffle the array without using pointers
-void shuffle(int array[], int n)
-{
-    srand(time(0)); // Seed the random number generator
+void shuffle(int array[], int n) {
+    srand(time(0)); //seed rand. NumGen
     for (int i = n - 1; i > 0; i--) {
         int j = rand() % (i + 1);
         swap(array, i, j);
     }
 }
 
-// Test function to verify the shuffle
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <assert.h>
-
-void swap(int array[], int i, int j);
-void shuffle(int array[], int n);
-void test(void);
-
-int *songs;
-int num_songs;
-
-int main(void)
-{
-    // Step 1: Get user input
-    printf("How many songs required? ");
-    scanf("%d", &num_songs);
-
-    // Step 2: Generate list of songs
-    songs = (int *)malloc(num_songs * sizeof(int));
-    for (int i = 0; i < num_songs; i++) {
-        songs[i] = i + 1;
+void verify_array(int array[], int n) {
+    int original[n];
+    for (int i = 0; i < n; i++) {
+        original[i] = array[i]; //copy all elements from input[] to original[]
     }
-
-    // Step 3: Shuffle the list
-    shuffle(songs, num_songs);
-
-    // Step 4: Output the shuffled list
-    printf("Output:\n");
-    for (int i = 0; i < num_songs; i++) {
-        printf("%d ", songs[i]);
-    }
-    printf("\n");
-
-    // Step 5: Run the test
-    test();
-
-    // Free the allocated memory
-    free(songs);
-
-    return 0;
-}
-
-// Function to swap two elements without using pointers
-void swap(int array[], int i, int j)
-{
-    int temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-}
-
-// Function to shuffle the array without using pointers
-void shuffle(int array[], int n)
-{
-    srand(time(0)); // Seed the random number generator
-    for (int i = n - 1; i > 0; i--) {
-        int j = rand() % (i + 1);
-        swap(array, i, j);
-    }
-}
-
-// Test function to verify the shuffle
-void test(void)
-{
-    int original[num_songs];
-    for (int i = 0; i < num_songs; i++) {
-        original[i] = songs[i];
-    }
-
-    shuffle(songs, num_songs);
-
-    // Check that all original elements are present in the shuffled array
-    int found[num_songs];
-    for (int i = 0; i < num_songs; i++) {
-        found[i] = 0;
-    }
-
-    for (int i = 0; i < num_songs; i++) {
-        for (int j = 0; j < num_songs; j++) {
-            if (songs[i] == original[j]) {
-                found[j] = 1;
-                break;
-            }
+    for (int i = 0; i < n; i++) {
+        int found = 0;
+        for (int j = 0; j < n; j++) {
+            found += (array[i] == original[j]); 
+            //verify if element present in original array
         }
-    }
-
-    for (int i = 0; i < num_songs; i++) {
-        assert(found[i] == 1);
+        assert(found == 1); //assert each element found only once
     }
 }
 
+void test(void) {
+    int test_case1[] = {1, 2, 3, 4, 5};
+    int test_case2[] = {5, 4, 3, 2, 1};
+    int test_case3[] = {2, 3, 1, 5, 4};
+    int n = sizeof(test_case1) / sizeof(test_case1[0]); //alternatively int n = 5; 
+
+    verify_array(test_case1, n);
+    verify_array(test_case2, n);
+    verify_array(test_case3, n);
+}
