@@ -10,8 +10,7 @@ void print_line(int line[], int width);
 void generate_next_line(int current_line[], int next_line[], int width);
 void test(void);
 
-int main(void) 
-{
+int main(void) {
     int current_line[WIDTH] = {0};
     int next_line[WIDTH] = {0};
     char choice;
@@ -59,9 +58,19 @@ void generate_next_line(int current_line[], int next_line[], int width) {
         int left = (i == 0) ? 0 : current_line[i - 1];
         int center = current_line[i];
         int right = (i == width - 1) ? 0 : current_line[i + 1];
-        int triplet = (left << 2) | (center << 1) | right;
 
-        next_line[i] = (triplet == 0b110 || triplet == 0b101 || triplet == 0b011 || triplet == 0b010 || triplet == 0b001) ? 1 : 0;
+         // Apply Rule 110 conditions directly
+        if ((left == 1 && center == 1 && right == 0) || // 110
+            (left == 1 && center == 0 && right == 1) || // 101
+            (left == 0 && center == 1 && right == 1) || // 011
+            (left == 0 && center == 1 && right == 0) || // 010
+            (left == 0 && center == 0 && right == 1))   // 001
+        {
+            next_line[i] = 1;
+        } else {
+            //111, 100, 000
+            next_line[i] = 0;
+        }
     }
 }
 

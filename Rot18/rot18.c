@@ -1,7 +1,6 @@
 #include "rot18.h"
 
 void rot(char str[]){
-    // your code here
     for (int i = 0; str[i] != '\0'; i++) {
         if (isalpha(str[i])) {
             if (isupper(str[i])) {
@@ -18,8 +17,6 @@ void rot(char str[]){
         }//ignore non alphanum
     }
 }
-
-// any other functions here
 
 void your_tests(void){
 
@@ -51,9 +48,13 @@ void your_tests(void){
     rot(test7);
     assert(strcmp(test7, "!") == 0);
 
-    char test8[] = "i want to go to kansas and live with aunt em and uncle henry well then what can be done";
-    rot(test8);
-    assert(strcmp(test8, "v jnag gb tb gb xnafnf naq yvir jvgu nhag rz naq hapyr urael jryy gura jung pna or qbar") == 0);
-    rot(test8);
-    assert(strcmp(test8, "i want to go to kansas and live with aunt em and uncle henry well then what can be done") == 0);
+    char test8[] = " \t\n";
+    apply_rot(test8);
+    assert(strcmp(test8, " \t\n") == 0);
+
+    char test9[] = "i want to go to kansas and live with aunt em and uncle henry well then what can be done";
+    rot(test9);
+    assert(strcmp(test9, "v jnag gb tb gb xnafnf naq yvir jvgu nhag rz naq hapyr urael jryy gura jung pna or qbar") == 0);
+    rot(test9);
+    assert(strcmp(test9, "i want to go to kansas and live with aunt em and uncle henry well then what can be done") == 0);
 }
