@@ -49,7 +49,7 @@ void your_tests(void){
     assert(strcmp(test7, "!") == 0);
 
     char test8[] = " \t\n";
-    apply_rot(test8);
+    rot(test8);
     assert(strcmp(test8, " \t\n") == 0);
 
     char test9[] = "i want to go to kansas and live with aunt em and uncle henry well then what can be done";
