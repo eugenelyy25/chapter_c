@@ -5,7 +5,6 @@
 #define ALPHABET_SIZE 26
 #define DIGIT_SIZE 10
 
-
 void rot(char str[]){
     for (int i = 0; str[i] != '\0'; i++) {
         if (isalpha(str[i])) {

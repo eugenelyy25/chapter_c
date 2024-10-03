@@ -2,20 +2,22 @@
 
 #define ROT13_SHIFT 13
 #define ROT5_SHIFT 5
+#define ALPHABET_SIZE 26
+#define DIGIT_SIZE 10
 
 void rot(char str[]){
     for (int i = 0; str[i] != '\0'; i++) {
         if (isalpha(str[i])) {
             if (isupper(str[i])) {
                 //ASCII + (Zero-based Index)
-                str[i] = 'A' + (str[i] - 'A' + 13) % 26; 
+                str[i] = 'A' + (str[i] - 'A' + ROT13_SHIFT) % ALPHABET_SIZE; 
                 //rot13 transform uppercase, wrap 13
             } else {
-               str[i] = 'a' + (str[i] - 'a' + 13) % 26; 
+               str[i] = 'a' + (str[i] - 'a' + ROT13_SHIFT) % ALPHABET_SIZE; 
                 //rot13 transform lowercase, wrap 13
             }
         } else if (isdigit(str[i])) {
-            str[i] = '0' + (str[i] - '0' + 5) % 10; 
+            str[i] = '0' + (str[i] - '0' + ROT5_SHIFT) % DIGIT_SIZE; 
             //rot5 transform digit, wrap 5
         }//ignore non alphanum
     }
