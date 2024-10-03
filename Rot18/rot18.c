@@ -1,5 +1,8 @@
 #include "rot18.h"
 
+#define ROT13_SHIFT 13
+#define ROT5_SHIFT 5
+
 void rot(char str[]){
     for (int i = 0; str[i] != '\0'; i++) {
         if (isalpha(str[i])) {
