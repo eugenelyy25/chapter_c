@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 #include <assert.h>
+
+// Function prototypes
+void intToStr(int num, char str[]);
+void test(void);
 
 int main(void) {
     test();
@@ -43,7 +48,7 @@ void intToStr(int num, char str[]) {
 }
 
 void test(void) {
-    char str;
+    char str[100];  // Fixed: Declare str as a char array
 
     intToStr(12345, str);
     assert(strcmp(str, "12345") == 0);

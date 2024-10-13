@@ -7,9 +7,11 @@ int is_palindrome(char phrase[]);
 
 int main(void) {
     test();
-    char phrase;
+    
+    char phrase[100];  // Declare an array to hold the input
     printf("Enter a phrase: ");
-    fgets(phrase, sizeof(phrase), stdin);
+    
+    fgets(phrase, sizeof(phrase), stdin);  // Read the input into the array
 
     if (is_palindrome(phrase)) {
         printf("The phrase is a palindrome.\n");
@@ -22,11 +24,12 @@ int main(void) {
 
 int is_palindrome(char phrase[]) {
     int left = 0, right = 0;
+    
     // Find the length of the phrase
     while (phrase[right] != '\0') {
         right++;
     }
-    right--; // Adjust for the null terminator
+    right--;  // Adjust for the null terminator
 
     while (left < right) {
         // Skip non-alphabetic characters
