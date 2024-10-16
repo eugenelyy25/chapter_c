@@ -2,7 +2,7 @@
 #include "mydefs.h"
 
 bool initialise(state* s, const char* str) {
-    if (s == NULL || str == NULL) {
+    /*if (s == NULL || str == NULL) {
         return false;
     }
 
@@ -16,7 +16,7 @@ bool initialise(state* s, const char* str) {
             }
         }
         fclose(file);
-    } else {
+    } else {*/
         // Read from string
         int len = strlen(str);
         if (len % WIDTH != 0) {
@@ -30,9 +30,9 @@ bool initialise(state* s, const char* str) {
         for (int i = 0; i < len / WIDTH; i++) {
             strncpy(s->board[i], str + i * WIDTH, WIDTH);
         }
+        return true;
     }
-    return true;
-}
+//}
 
 bool tostring(const state* s, char* str) {
     if (s == NULL || str == NULL) {
@@ -131,9 +131,12 @@ bool dropblocks(state* s) {
 }
 
 void test(void) {
-        // Code to generate the string 'str'
+    
+    // Code to generate the string 'str'
     char str[100]; // Replace with your actual string generation code
     strcpy(str, "...DBCDAACDAABDAABC.ABCD.BC...");
+    strcpy(str, "ABCDBCDAACDAABDAABCAABCDABCDA");
+    strcpy(str, "ABCDBCDAACDAABDAABCAABCDABCD+A");
 
     // Print the generated string for debugging
     printf("Generated string: %s\n", str);
@@ -149,6 +152,13 @@ void test(void) {
     // Assertion
     if (strcmp(str, "...DBCDAACDAABDAABC.ABCD.BC...") == 0) {
         printf("Assertion passed\n");
+    }
+    if (strcmp(str, "ABCDBCDAACDAABDAABCAABCDABCDA") == 0) {
+        printf("Assertion passed\n");
+    }
+    if (strcmp(str, "ABCDBCDAACDAABDAABCAABCDABCD+A") == 0) {
+        printf("Assertion passed\n");
+
     } else {
         printf("Assertion failed\n");
     }

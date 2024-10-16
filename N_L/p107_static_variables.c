@@ -1,6 +1,11 @@
+// A FAILED attempt to
+// convert all 'n' chars to 'N'
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+
+#define LINE 500
 
 char* nify(char s[]);
 
@@ -8,26 +13,32 @@ int main(void)
 {
     char* s1 = nify("inconveniencing");
     char* s2 = nify("neill");
+    
     assert(strcmp(s2, "Neill") == 0);
     assert(strcmp(s1, "iNcoNveNieNciNg") == 0);
-    free(s1);
-    free(s2);
+    
     return 0;
 }
 
-// malloc: Swaps all 'n' -> 'N'
+// Local copy: Swaps all 'n' -> 'N'
 char* nify(char s[])
 {
-    int l = strlen(s);
-    char* t = (char*)malloc(l + 1);
-    if (t == NULL) {
-        exit(EXIT_FAILURE);
-    }
+    static char t[LINE];
     strcpy(t, s);
+    
     for (int i = 0; t[i]; i++) {
         if (t[i] == 'n') {
             t[i] = 'N';
         }
     }
+    
     return t;
 }
+
+/*
+nkI489iR5X.o: /tmp/nkI489iR5X.c:18: main: Assertion `strcmp(s1, "iNcoNveNieNciNg") == 0' failed.
+Aborted
+
+
+=== Code Exited With Errors ===
+*/
