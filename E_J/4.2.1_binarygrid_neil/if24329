@@ -1,0 +1,55 @@
+#include "bingrid.h"
+#include <string.h>
+
+#define BOARDSTR (MAX * MAX + 1)
+
+typedef bool (*Rule)(char *p, int line_length, int stride);
+
+bool apply_rules(board *brd);
+bool check_sanity(board *brd);
+void test_str2board(void);
+void test_board2str(void);
+void test_solve_board(void);
+
+bool str2board(board *brd, char *str) {
+    int len = strlen(str);
+    int dim = (int)sqrt(len);
+    // We consider empty string invalid
+    if (dim == 0 || dim * dim != len || dim % 2 != 0) {
+        return false;
+    }
+    brd->sz = dim;
+    for (int i=0; i < dim; i++) {
+        for (int j=0; j < dim; j++) {
+            switch (str[i * dim + j]) {
+
+            }
+        }
+    }
+}
+/*
+'stride' is how long we should move forward to locate the next adjacent cell
+in the same line.
+For rows stride = 1
+For columns, stride = MAX (not brd->sz because the inner array has a fixed
+wisth of MAX)
+*/
+
+bool apply_rules(board *brd) {
+    bool changed = false;
+    Rule rules[] = {apply_rule_pair, apply_rule_oxo, apply_rule_counting};
+    for (int n=0; n < 3; n++)  {
+        Rule rule = rules[n];
+        for (int i=0; i < brd->sz; i++) {
+            //row
+            if (rule(&brd->b2d[i][0], brd->sz, 1)) {
+                changed = true;
+            }
+            //column
+            if (rule(&brd->b2d[0][i], brd->sz, MAX)) {
+                changed = true;
+            }
+        }
+    }
+    return changed;
+}

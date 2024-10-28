@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+g=`ls -d *(/)`
+for i in $=g; do
+	gcc -Wall -Wextra -Wpedantic -std=c99 -Wvla -Wall -Wfloat-equal -Wvla -Werror -fsanitize=undefined -fsanitize=address -g3 -I. bingrid_driver.c ${i}/bingrid.c -o ./${i}_bg -lm >& /dev/null
+	e=$?
+	if (( ${e} == 0 )); then
+		echo -n "${i} Compiles OK"
+        r=`./${i}_bg >& /dev/null |& wc -l`
+        echo " run ${r} lines output"
+    else
+        echo "${i} Doesn't Compile :-("
+    fi
+    rm -f ./${i}_bg
+done
